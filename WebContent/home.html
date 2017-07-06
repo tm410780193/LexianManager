@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>乐鲜超市</title>
+    <link rel="shortcut icon" href="http://static01.yiguo.com/common/images/yiguo.ico">
+    <link rel="stylesheet" href="style/common.css" type="text/css">
+    <link rel="stylesheet" href="framework/bootstrap3/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="header-pic">
+            <img src="http://osnk57csd.bkt.clouddn.com/wenzi.png" alt="header-pic" title="欢迎光临乐鲜超市">
+        </div>
+    </header>
+    <div class="main" ng-app="lx-app">
+        <div class="row">
+            <div class="col-md-2 main-left">
+                <div class="left-header">
+                    <div class="left-headr-top">
+                        <div class="row">
+                            <div class="avatar col-md-6">
+                                <img src="http://osnk57csd.bkt.clouddn.com/imagehead.png" alt="">
+                            </div>
+                            <div class="header-operation col-md-6">
+                                <a href="javascript:;">退出登录</a>
+                                <a href="javascript:;">修改密码</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-info">
+                        <span>用户帐号</span>
+                    </div>
+                    <div class="time-area" ng-controller="timeController">
+                        <span ng-init="startClock()" ng-bind="curTime"></span>
+                    </div>
+                </div>
+                <div class="left-user-center">
+                    <ul>
+                        <li>
+                            <h4>权限管理</h4>
+                            <ul>
+                                <li><a ui-sref="authority/querymenu" href="javascript:;">查看菜单</a></li>
+                                <li><a ui-sref="authority/queryrole" href="javascript:;">查看角色</a></li>
+                                <li><a ui-sref="authority/queryusers" href="javascript:;">查看后台用户</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>会员管理</h4>
+                            <ul>
+                                <li><a ui-sref="vip/queryvip" href="javascript:;">会员一览</a></li>
+                                <li><a ui-sref="vip/state" href="javascript:;">启用/禁用</a></li>
+                                <li><a ui-sref="vip/search" href="javascript:;">会员搜索</a></li>
+                            </ul>
+                    </ul>
+                    </li>
+                    <li>商品管理</li>
+                    <li>门店管理</li>
+                    <li>订单管理</li>
+                    <li>板块管理</li>
+                    <li>数据统计</li>
+                    <li>系统设置</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 main-right">
+                <div ui-view=""></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+</div>
+
+
+<script src="framework/jquery.js"></script>
+<script src="framework/angular/angularjs.js"></script>
+<script src="framework/angular/angular-ui-router.js"></script>
+<script src="script/app.js"></script>
+<script src="script/controllers.js"></script>
+<script src="script/directives.js"></script>
+<script src="script/filters.js"></script>
+<script src="script/services.js"></script>
+</body>
+</html>
